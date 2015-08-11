@@ -19,11 +19,27 @@
 # Imports
 
 # Body
+def avoids(word, forbidden):
+	for letter in forbidden:
+		if letter in word:
+			return False
+	return True
 
+def prompt_forbidden_string():
+	counter = 0
+	forbidden = raw_input("Enter a forbidden string: ")
+	with open("words.txt","r") as fin:
+		for word in fin:
+			if avoids(word, forbidden):
+				#print word
+				counter += 1
+	print ("Number of words avoiding %s are: %d") %(forbidden,counter)
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+	
+
+
 
 if __name__ == '__main__':
     main()

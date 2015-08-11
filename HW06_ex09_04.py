@@ -17,11 +17,22 @@
 # Imports
 
 # Body
-
+def uses_only(word,string):
+	for letter in word:
+		if letter not in string:
+			return False
+	return True
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+	counter = 0
+	with open("words.txt","r") as fin:
+		for word in fin:
+			if uses_only(word,"acefhlo"):
+				print word
+				counter += 1
+	print ("Number of words made up of only acefhlo are: %d") %(counter)
+
 
 if __name__ == '__main__':
     main()
