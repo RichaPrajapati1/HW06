@@ -15,7 +15,7 @@
 # Body
 def is_abecedarian(word):
 	previous = word[0]
-	for letter in word.strip():
+	for letter in word:
 		if letter < previous:
 			return False
 		previous = letter
@@ -28,7 +28,8 @@ def main():
     #pass  # Call your function(s) here.
     counter = 0
     fin = open ("words.txt","r")
-    for word in fin:
+    for line in fin:
+        word = line.strip()
     	if is_abecedarian(word):
     		counter += 1
     fin.close()

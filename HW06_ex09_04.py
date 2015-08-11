@@ -27,7 +27,8 @@ def uses_only(word,string):
 def main():
 	counter = 0
 	with open("words.txt","r") as fin:
-		for word in fin:
+		for line in fin:
+			word = line.strip()
 			if uses_only(word,"acefhlo"):
 				print word
 				counter += 1

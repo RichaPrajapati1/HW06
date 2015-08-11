@@ -27,7 +27,8 @@ def main():
 	counter_aeiou = 0
 	counter_aeiouy = 0
 	with open("words.txt","r") as fin:
-		for word in fin:
+		for line in fin:
+			word = line.strip()
 			if uses_all(word, 'aeiou'):
 				counter_aeiou += 1
 			if uses_all(word,'aeiouy'):
