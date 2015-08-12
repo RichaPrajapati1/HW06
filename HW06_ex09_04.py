@@ -17,9 +17,9 @@
 # Imports
 
 # Body
-def uses_only(word,string):
+def uses_only(word,required):
 	for letter in word:
-		if letter not in string:
+		if letter not in required:
 			return False
 	return True
 
